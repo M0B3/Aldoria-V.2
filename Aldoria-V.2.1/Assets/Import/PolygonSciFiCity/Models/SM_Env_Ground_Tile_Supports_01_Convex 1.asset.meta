@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 8c0094db14cf197428725cb21ff20d4e
+timeCreated: 1580693314
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 115950
+  packageName: POLYGON Sci-Fi City - Low Poly 3D Art by Synty
+  packageVersion: 1.21
+  assetPath: Assets/PolygonSciFiCity/Models/SM_Env_Ground_Tile_Supports_01_Convex
+    1.asset
+  uploadId: 560542
