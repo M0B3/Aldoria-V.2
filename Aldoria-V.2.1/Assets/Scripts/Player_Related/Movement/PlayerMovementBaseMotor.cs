@@ -6,18 +6,23 @@ using UnityEngine.InputSystem;
 public class PlayerMovementBaseMotor : MonoBehaviour
 {
     private CharacterController characterController;
+    private Animator animator;
 
     //Input direction
     private Vector2 movementInput;
     private Vector3 moveDirection;
+
+    private float animatorVelocity;
+    private float animatorPosX;
+    private float animatorPosZ;
 
     [SerializeField]
     private Transform camHolder;
 
     [Header("Player Speed Control")]
     [SerializeField, Range(.2f, 10f), Tooltip("The player walk speed between .2 to 10 units")]
-    private float walkSpeed;    
-    [SerializeField, Range( 5f, 20f), Tooltip("The player running speed between 5 to 20 units")]
+    private float walkSpeed;
+    [SerializeField, Range(5f, 20f), Tooltip("The player running speed between 5 to 20 units")]
     private float runSpeed;
     //The player speed
     private float desiredMoveSpeed;
@@ -42,6 +47,7 @@ public class PlayerMovementBaseMotor : MonoBehaviour
     {
         //Get the component
         characterController = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
 
         //Set the speed
         desiredMoveSpeed = walkSpeed;
@@ -50,6 +56,15 @@ public class PlayerMovementBaseMotor : MonoBehaviour
     {
         PerformGravity();
         PerformMove();
+
+        animatorVelocity = movementInput.x + movementInput.y;
+        animator.SetFloat("Velocity", animatorVelocity);
+
+        float posX = movementInput.y;
+        float posZ = movementInput.x;
+
+        animator.SetFloat("PosX", posX);
+        animator.SetFloat("PosZ", posZ);
     }
 
 
@@ -59,7 +74,7 @@ public class PlayerMovementBaseMotor : MonoBehaviour
         goTo.y = moveDirection.y;
 
         characterController.Move(goTo * desiredMoveSpeed * Time.deltaTime);
-        
+
 
     }
 
