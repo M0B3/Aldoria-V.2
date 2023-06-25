@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5314ce91d3e17c74faa32c7719c1b28d
+guid: be9ec6c1163cf534ba800d8ff8952cd6
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -31,11 +31,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Rifle Idle
+      name: Firing Rifle
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 231
+      lastFrame: 17
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

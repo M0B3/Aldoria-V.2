@@ -1,7 +1,6 @@
 using BehaviourTree;
 
 using System.Linq;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Patrol : Node
@@ -27,8 +26,13 @@ public class Patrol : Node
 
     public override NodeState Evaluate()
     {
+
+        bt.agent.speed = bt.speed;
+        bt.animator.SetBool("IsRunning", false);
+        bt.animator.SetBool("IsShooting", false);
+
         //Timer between patrols
-        if(bt.isWaiting && currentTime + bt.timeBetweenPatrols <= Time.time)
+        if (bt.isWaiting && currentTime + bt.timeBetweenPatrols <= Time.time)
         {
             bt.isWaiting = false;
             SelectPointToGo();
